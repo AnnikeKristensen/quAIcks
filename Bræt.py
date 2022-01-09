@@ -1,3 +1,8 @@
+"""gameboard is a list of the different spot.
+1st digit: the index
+2nd digit: the buy-point the AI is allowed to buy for
+3rd digit: the point that the AI will get score for
+4th digit: if the position has a rubin or not (1 or 0) """
 gameboard = [(0, 0, 0, 0), (1, 1, 0, 0), (2, 2, 0, 0), (3, 3, 0, 0), (4, 4, 0, 0), (5, 5, 0, 1), (6, 6, 1, 0),
              (7, 7, 1, 0), (8, 8, 1, 0), (9, 9, 1, 1),
              (10, 10, 2, 0), (11, 11, 2, 0), (12, 12, 2, 0), (13, 13, 2, 1), (14, 14, 3, 0), (15, 15, 3, 0),
@@ -30,9 +35,11 @@ class Board:
         green_sum = 0
 
     def get_position_value(self, index):
+        """With index, get the buy-points, the point and the rubin-status"""
         return (gameboard[index])
 
     def get_white_sum(self):
+        """Calculate the sum of all the whites on the board """
         white_sum = 0
         for token_color, token_value in self.tokens_on_board:
             if token_color == "White":
@@ -40,21 +47,25 @@ class Board:
         return (white_sum)
 
     def add_token_to_board(self,chosen_color,chosen_value):
+        """add token to list token_on_board"""
         print("adding token to board")
         self.tokens_on_board.append((chosen_color,chosen_value))
         print(self.tokens_on_board)
 
     def important_last_two_token(self):
+        """Checks if the last two token has special ability (such as if its green)"""
         # TODO
         pass
 
     def amount_token_on_board(self):
+        """Amount of token that currently is on the board """
         counter = 0
         for token_color, token_value in self.tokens_on_board:
             counter += 1
         return (counter)
 
     def get_colors_sum(self):
+        """The distribution of the colors"""
         white_counter = 0
         white_sum = 0
         color_counter = 0
