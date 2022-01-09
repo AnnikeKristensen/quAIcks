@@ -57,6 +57,7 @@ class Board:
     def get_colors_sum(self):
         white_counter = 0
         white_sum = 0
+        color_counter = 0
         orange_counter = 0
         orange_sum = 0
         red_counter = 0
@@ -72,16 +73,20 @@ class Board:
             elif token_color == "Orange":
                 orange_counter += 1
                 orange_sum += token_value
+                color_counter +=1
             elif token_color == "Red":
                 red_counter += 1
                 red_sum += token_value
+                color_counter += 1
             elif token_color == "Blue":
                 blue_counter += 1
                 blue_sum += token_value
+                color_counter += 1
             elif token_color == "Green":
                 green_counter += 1
                 green_sum += token_value
+                color_counter += 1
         return (
-            white_counter, white_sum, orange_counter, orange_sum, red_counter, red_sum, blue_counter, blue_sum,
+            white_counter, white_sum, color_counter, orange_sum, red_counter, red_sum, blue_counter, blue_sum,
             green_counter,
             green_sum)

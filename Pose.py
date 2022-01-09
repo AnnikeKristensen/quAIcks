@@ -44,8 +44,6 @@ class Bag:
         print(self.bag)
 
 
-
-
     def get_bag_size(self):
         counter = 0
         for token_color, token_value in self.bag:
