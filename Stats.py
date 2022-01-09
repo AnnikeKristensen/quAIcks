@@ -14,7 +14,7 @@ class stats:
         self.amount_green_in_bag=0
         self.amount_black_in_bag=0
         self.state=0
-        self.bagsize = self.playbag.get_back_size()
+        self.bagsize = self.playbag.get_bag_size()
 
 
     def updateStats(self):
