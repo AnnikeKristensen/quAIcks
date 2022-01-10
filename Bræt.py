@@ -23,8 +23,10 @@ class Board:
 
     def __init__(self):
         self.amount_of_tokens_on_board = 0
-        white_counter = 0
-        white_sum = 0
+        self.last_token_was_colored = False
+        self.last_token_color = None
+        self.white_counter = 0
+        self.white_sum = 0
         orange_counter = 0
         orange_sum = 0
         red_counter = 0
@@ -40,20 +42,29 @@ class Board:
 
     def get_white_sum(self):
         """Calculate the sum of all the whites on the board """
-        white_sum = 0
+        self.white_sum = 0
         for token_color, token_value in self.tokens_on_board:
             if token_color == "White":
-                white_sum += white_sum
-        return (white_sum)
+                self.white_sum += token_value
+        return (self.white_sum)
 
     def add_token_to_board(self,chosen_color,chosen_value):
         """add token to list token_on_board"""
-        print("adding token to board")
         self.tokens_on_board.append((chosen_color,chosen_value))
-        print(self.tokens_on_board)
+        if chosen_color != "White":
+            self.last_token_was_colored: True
+            self.last_token_color = chosen_color
+        else:
+            self.last_token_was_colored: False
 
-    def important_last_two_token(self):
-        """Checks if the last two token has special ability (such as if its green)"""
+    def delete_token_from_board(self,index):
+        del self.tokens_on_board[index]
+
+    def remove_all_tokens_from_board(self):
+        self.tokens_on_board = []
+
+    def important_token(self):
+        """List of important tokens"""
         # TODO
         pass
 
@@ -77,6 +88,8 @@ class Board:
         blue_sum = 0
         green_counter = 0
         green_sum = 0
+        purple_counter = 0
+        black_counter = 0
         for token_color, token_value in self.tokens_on_board:
             if token_color == "White":
                 white_counter += 1
@@ -97,7 +110,11 @@ class Board:
                 green_counter += 1
                 green_sum += token_value
                 color_counter += 1
+            elif token_color == "Purple":
+                purple_counter += 1
+            elif token_color == "Black":
+                black_counter += 1
+
         return (
             white_counter, white_sum, color_counter, orange_sum, red_counter, red_sum, blue_counter, blue_sum,
-            green_counter,
-            green_sum)
+            green_counter, green_sum, purple_counter, black_counter)
