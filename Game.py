@@ -81,7 +81,7 @@ class Game():
                     self.score += 2
                     self.drop += 1
             if self.statistik.we_see_green:
-                greencounter = 0
+                greencounter = 0 #amount of green in the last two spots
                 lasttwo = self.board.tokens_on_board[-2:]
                 for token_color, token_value in lasttwo:
                     if token_color == "Green":
