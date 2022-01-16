@@ -1,6 +1,6 @@
 class Game():
     """The actual gameplay"""
-    def __init__(self, bag, board, stats):
+    def __init__(self, bag, board):
         self.bag = bag
         self.board = board
         self.score = 0
@@ -11,7 +11,6 @@ class Game():
         self.boardtokens = self.board.tokens_on_board
         self.color_on_board = self.board.get_colors_sum()[2]
         self.position = 0
-        self.statistik = stats
         self.stop = False
 
 

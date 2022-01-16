@@ -27,14 +27,7 @@ class Board:
         self.last_token_color = None
         self.white_counter = 0
         self.white_sum = 0
-        orange_counter = 0
-        orange_sum = 0
-        red_counter = 0
-        red_sum = 0
-        blue_counter = 0
-        blue_sum = 0
-        green_counter = 0
-        green_sum = 0
+
 
     def get_position_value(self, index):
         """With index, get the buy-points, the point and the rubin-status"""
