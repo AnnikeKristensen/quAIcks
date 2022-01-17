@@ -18,6 +18,7 @@ BLUEAI_high = HighestNonWhiteBlueAI("HighestNonWhiteBlueAI")
 example_continue_data = {"boom_risk": 0.5,
                          "unused": "data",
                          "whatever": "doesn't matter"}
+
 example_blue_ai_data = [("WHITE", 1), ("BLUE", 2), ("GREEN", 1), ("WHITE", 2)]
 print("Continue AI decision examples:")
 simple.make_decision(example_continue_data)
