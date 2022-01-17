@@ -26,9 +26,9 @@ example_blue_ai_data = {"list_of_tokens": [("WHITE", 1), ("BLUE", 2), ("GREEN", 
 example_bai_data = {"money": 13,
                     "store": [
                         (("ORANGE", 1), 3),
-                        (("RED", 1), 4),
-                        (("RED", 2), 8),
-                        (("RED", 4), 14),
+                        (("RED", 1), 6),
+                        (("RED", 2), 10),
+                        (("RED", 4), 16),
                         (("BLUE", 1), 5),
                         (("BLUE", 2), 10),
                         (("BLUE", 4), 19)]}
