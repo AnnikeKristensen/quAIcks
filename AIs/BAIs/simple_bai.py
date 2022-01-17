@@ -20,7 +20,6 @@ class SimpleBAI(AbstractAI):
 
     @staticmethod
     def buy_most_expensive_token(money, store, skip_colour=None):
-        print("using money:", money)
         expensive_tokens = []
         current_price = 0
         for token, price in store:
@@ -30,5 +29,4 @@ class SimpleBAI(AbstractAI):
                 expensive_tokens = [token]
             elif price == current_price and token_colour != skip_colour:
                 expensive_tokens.append(token)
-        print(expensive_tokens)
         return random.choice(expensive_tokens), current_price
